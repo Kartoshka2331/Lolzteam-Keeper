@@ -1,0 +1,17 @@
+[
+  {
+    "title": "Пример розыгрыша | Заголовок темы",
+    "body": "[CENTER]Текст розыгрыша в BB-code разметке.\nПоддерживаются переносы строк, [B]форматирование[/B], спойлеры и ссылки.[/CENTER]",
+    "parameters": {
+      "contest_type": "by_finish_date",
+      "length_value": 3,
+      "length_option": "days",
+      "prize_type": "money",
+      "count_winners": 1,
+      "prize_data_money": 500,
+      "require_like_count": 1,
+      "require_total_like_count": 200,
+      "tags": ""
+    }
+  }
+]

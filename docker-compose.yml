@@ -1,0 +1,17 @@
+services:
+  lolz-keeper:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: lolz-keeper
+    restart: unless-stopped
+    env_file:
+      - .env
+    volumes:
+      - ./.env:/app/.env:ro
+      - ./contests.json:/app/contests.json:ro
+    healthcheck:
+      test: ["CMD", "python", "-c", "import sys; sys.exit(0)"]
+      interval: 60s
+      timeout: 10s
+      retries: 3
