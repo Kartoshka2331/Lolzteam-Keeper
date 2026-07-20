@@ -1,14 +1,13 @@
 import asyncio
 import signal
 
-from config import get_settings
+from config import settings
 from scheduler import TaskScheduler
 from services import ContestService, ThreadService
 from utils.logger import logger
 
 
 async def run() -> None:
-    settings = get_settings()
     logger.info("Starting application for thread bumping and contest creation")
 
     thread_service = ThreadService(settings)

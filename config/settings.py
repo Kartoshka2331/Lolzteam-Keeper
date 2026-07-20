@@ -1,4 +1,3 @@
-from functools import lru_cache
 from typing import Annotated
 
 from pydantic import Field, field_validator
@@ -43,6 +42,4 @@ class Settings(BaseSettings):
         return []
 
 
-@lru_cache(maxsize=1)
-def get_settings() -> Settings:
-    return Settings()
+settings = Settings()

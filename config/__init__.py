@@ -1,7 +1,7 @@
-from config.settings import Settings, get_settings
+from config.settings import Settings, settings
 
 
 __all__ = [
     "Settings",
-    "get_settings",
+    "settings",
 ]
