@@ -5,14 +5,14 @@ ENV PIP_NO_CACHE_DIR=1 PIP_DISABLE_PIP_VERSION_CHECK=1
 WORKDIR /app
 
 COPY pyproject.toml ./
+COPY config ./config
+COPY models ./models
+COPY scheduler ./scheduler
+COPY services ./services
+COPY utils ./utils
+COPY main.py ./main.py
 
-RUN pip install --no-cache-dir --prefix=/install \
-    "aiohttp" \
-    "apscheduler" \
-    "loguru" \
-    "pydantic" \
-    "pydantic-settings" \
-    "tenacity"
+RUN pip install --prefix=/install .
 
 
 FROM python:3.13-slim AS runtime
@@ -25,15 +25,8 @@ WORKDIR /app
 
 COPY --from=builder /install /usr/local
 
-COPY config ./config
-COPY models ./models
-COPY scheduler ./scheduler
-COPY services ./services
-COPY utils ./utils
-COPY main.py ./main.py
-
 RUN mkdir -p /app/logs && chown -R appuser:appuser /app
 
 USER appuser
 
-CMD ["python", "main.py"]
+CMD ["python", "-m", "main"]
