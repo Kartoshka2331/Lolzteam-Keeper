@@ -5,12 +5,7 @@ ENV PIP_NO_CACHE_DIR=1 PIP_DISABLE_PIP_VERSION_CHECK=1
 WORKDIR /app
 
 COPY pyproject.toml ./
-COPY config ./config
-COPY models ./models
-COPY scheduler ./scheduler
-COPY services ./services
-COPY utils ./utils
-COPY main.py ./main.py
+COPY src/ ./src/
 
 RUN pip install --prefix=/install .
 

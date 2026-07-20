@@ -17,5 +17,8 @@ dependencies = [
 ]
 
 [tool.setuptools]
-packages = ["config", "models", "scheduler", "services", "utils"]
+package-dir = {"" = "src"}
 py-modules = ["main"]
+
+[tool.setuptools.packages.find]
+where = ["src"]
