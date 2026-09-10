@@ -19,7 +19,7 @@ class Settings(BaseSettings):
     thread_bump_cron_minute: str = Field(default="0")
 
     contests_config_path: str = Field(default="contests.json")
-    contest_creation_cron_day: str = Field(default="*/2")
+    contest_creation_cron_day: str = Field(default="*/7")
     contest_creation_cron_hour: str = Field(default="17")
     contest_creation_cron_minute: str = Field(default="0")
 
