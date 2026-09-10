@@ -16,7 +16,7 @@ A single asyncio process with two cron jobs: one bumps a fixed list of threads t
 Two jobs are registered on an `AsyncIOScheduler` running in `SCHEDULER_TIMEZONE` (default `Europe/Moscow`):
 
 | Job              | Default schedule                             | What it does                                                                                  |
-|------------------|----------------------------------------------|ч-----------------------------------------------------------------------------------------------|
+|------------------|----------------------------------------------|-----------------------------------------------------------------------------------------------|
 | Thread bumping   | `08:00` and `20:00` daily                    | Walks `THREAD_TO_BUMP_IDS` in order, `POST /threads/{id}/bump`, pausing between each request. |
 | Contest creation | `17:00` on the 1st, 8th, 15th, 22nd and 29th | Loads `contests.json`, picks one entry at random, `POST /contests`.                           |
 
